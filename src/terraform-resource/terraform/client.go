@@ -234,7 +234,6 @@ func (c Client) runInit() error {
 		"init",
 		"-input=false",
 		"-get=true",
-		"-backend=false", // resource doesn't support built-in backends yet
 	}
 
 	if c.Model.PluginDir != "" {
