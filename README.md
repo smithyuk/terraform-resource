@@ -190,6 +190,8 @@ Finally, `env_name` is automatically passed as an input `var`.
         plan_only: true
         vars:
           subnet_cidr: 10.0.1.0/24
+        env:
+          TF_CLI_ARGS_init: -backend=true -backend-config="key=remote.tfstate" -backend-config="bucket=mystates" -backend-config="region=eu-west-1"
 
 - name: terraform-apply
   plan:
@@ -202,6 +204,8 @@ Finally, `env_name` is automatically passed as an input `var`.
         plan_run: true
         vars:
           subnet_cidr: 10.0.1.0/24
+        env:
+          TF_CLI_ARGS_init: -backend=true -backend-config="key=remote.tfstate" -backend-config="bucket=mystates" -backend-config="region=eu-west-1"
 ```
 
 #### Metadata file
